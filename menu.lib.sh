@@ -103,6 +103,7 @@ function shell_menu() {
     add_menu "Install most" "install_most"
     add_menu "Install htop" "install_htop"
     add_menu "Install ntpdate" "install_ntpdate"
+    add_menu "Install nrpe" "install_nrpe"
     add_menu "Install security packages" "install_security"
     show_menu
 

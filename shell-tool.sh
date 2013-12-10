@@ -135,6 +135,15 @@ function install_denyhosts()  {
     pause
 }
 
+#############################################################
+# Installation de denyhosts									#	
+#############################################################
+function install_nrpe()  {
+	print_info "installing nagios nrpe"
+    check_and_install nrpe nagios-nrpe-server
+
+    pause
+}
 
 
 #############################################################
@@ -190,6 +199,7 @@ function install_security()  {
     install_denyhosts
     install_rkhunter
     install_chkrootkit
+    install_nrpe
     # modifier la config de ssh pour améliorer la securité
     # passer PermitRootLogin yes a PermitRootLogin without-password par defaut
     # tester la config de sshd avec cette commande avant de la remplacer :) sshd -t -f /tmp/sshd_config 
