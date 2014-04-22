@@ -4,7 +4,7 @@
 #################################################################
 # Version: 0.1
 # Date: 30/11/2012
-# Author:  Sébastien THIBAULT <sebastien@oblady.fr>
+# Author:  Sï¿½bastien THIBAULT <sebastien@oblady.fr>
 #
 # Notes: 
 #
@@ -50,9 +50,7 @@ function install_nginx {
 			echo "deb-src http://nginx.org/packages/debian/ squeeze nginx" >> /etc/apt/sources.list
 			echo "" >> /etc/apt/sources.list
 			cd /tmp
-			wget  -q http://nginx.org/keys/nginx_signing.key
-			cat nginx_signing.key | apt-key add - &> /dev/null
-			rm nginx_signing.key 
+			curl  -s http://nginx.org/keys/nginx_signing.key | apt-key add - 
 			apt-get -qq update 
 			cd -
 		else 
@@ -96,9 +94,7 @@ function install_varnish {
 			echo "deb http://repo.varnish-cache.org/debian/ squeeze varnish-3.0" >> /etc/apt/sources.list
 			echo "" >> /etc/apt/sources.list
 			cd /tmp
-			wget -q http://repo.varnish-cache.org/debian/GPG-key.txt
-			cat GPG-key.txt | apt-key add - &> /dev/null
-			rm GPG-key.txt 
+			curl -s  http://repo.varnish-cache.org/debian/GPG-key.txt | apt-key add  -
 			apt-get -qq update 
 			cd -
 		else 
@@ -168,9 +164,7 @@ function install_php5_fpm {
 			echo "deb-src http://packages.dotdeb.org stable all" >> /etc/apt/sources.list
 			echo "" >> /etc/apt/sources.list
 			cd /tmp
-			wget -q http://www.dotdeb.org/dotdeb.gpg
-			cat dotdeb.gpg | apt-key add - &> /dev/null
-			rm dotdeb.gpg 
+			curl -s http://www.dotdeb.org/dotdeb.gpg| apt-key add -
 			apt-get -qq update 
 			cd -
 		else 

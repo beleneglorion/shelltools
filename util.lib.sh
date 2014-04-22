@@ -4,7 +4,7 @@
 #################################################################
 # Version: 0.1
 # Date: 30/11/2012
-# Author:  Sébastien THIBAULT <sebastien@oblady.fr>
+# Author:  Sï¿½bastien THIBAULT <sebastien@oblady.fr>
 #
 # Notes: 
 #
@@ -126,6 +126,7 @@ function check_sanity {
     then
 		die "Distribution is not supported"
     fi
+    install_curl
 }
 #####################################################################
 # Check if $binary is present if not install $packages        	    #
@@ -171,6 +172,8 @@ function check {
 		return 1
     fi
 }
+
+
 #####################################################################
 # Check if $depot is present in apt sources list     	    #
 # usage : 	check_apt_source $despot # 
@@ -224,6 +227,15 @@ function test_color {
  	printf "${LIGHTPURPLE}LIGHTPURPLE${NC}\n"
  	printf "${YELLOW}YELLOW${NC}\n"
  	printf "${WHITE}WHITE${NC}\n"
+    pause
+}
+
+#############################################################
+# Installation de nmap										#	
+#############################################################
+function install_curl  {
+	print_info "installing Curl"
+    check_and_install curl curl
     pause
 }
 #####################################################################
