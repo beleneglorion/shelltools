@@ -62,6 +62,7 @@ function install_ntpdate()  {
     check_and_install ntpdate ntpdate
     print_info "Configuring ntpdate"
     echo "/usr/sbin/ntpdate -s 0.debian.pool.ntp.org" > /etc/cron.daily/ntpdate 
+    chmod a+x /etc/cron.daily/ntpdate
     pause
 }
 #############################################################
