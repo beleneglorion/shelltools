@@ -4,7 +4,7 @@
 #################################################################
 # Version: 0.1
 # Date: 30/11/2012
-# Author:  SÃ©bastien THIBAULT <sebastien@oblady.fr>
+# Author:  Sébastien THIBAULT <sebastien@oblady.fr>
 #
 # Notes: 
 #
