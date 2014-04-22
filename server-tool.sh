@@ -135,6 +135,18 @@ function install_php5_mod {
     check_and_install php5 libapache2-mod-php5 php5-cli php5-gd php5-mysql php5-apc php5-curl
     pause
 }
+
+######################################
+# PHP5-Mongodb extension	   	 #	
+######################################
+function install_php5_mongodb {
+	print_info "installing PHP5-mongodb"
+    check_and_install phpize php5-dev
+    check_and_install php php5-cli
+    check_and_install pecl php-pear
+    pecl install mongo 
+    pause
+}
 ######################################
 # PHP5 FPM installer		     	 #	
 ######################################

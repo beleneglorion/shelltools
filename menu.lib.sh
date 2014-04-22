@@ -39,6 +39,7 @@ function server_menu() {
     add_menu "Install Nginx" "install_nginx"
     add_menu "Install apache" "install_apache"
     add_menu "Install PHP5" "install_php5"
+    add_menu "Install PHP5 Mongodb" "install_php5_mongodb"
     add_menu "Install Mysql" "install_mysql"
     add_menu "Install postfix" "install_postfix"
     add_menu "Install nullmailer" "install_nullmailer"
