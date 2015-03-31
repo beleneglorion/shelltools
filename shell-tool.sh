@@ -19,11 +19,14 @@
 # de la fonction avant insertion							#
 #############################################################
 function install_cool_bash()  {
+	disable_pause
+        install_bash_completition
+	enable_pause
 	if [ ! -f ./resources/bash/bash_color.txt ]
 	then
 	  print_warning "bash_color.txt is missing"
 	  return 0;
-	fi	
+	fi
 	result=$(cat /etc/bash.bashrc|grep "Set colorful PS1 only on colorful terminals" |wc -l) 2> /dev/null
 	#test de l'existance de la fonction dans le bash.bashrc
 	if [ $result -eq 0 ]
@@ -35,6 +38,19 @@ function install_cool_bash()  {
 	fi 
 	pause;
 }
+
+#############################################################
+# Installation  de bash completion	    		    #
+#############################################################
+function install_bash_completition()  {
+    if [ ! -f /etc/bash_completion ]
+    then
+	print_info "installing bash completion"
+        install_package  bash-completion
+        pause
+     fi
+}
+
 
 #############################################################
 # Installation  de most un pager avec la coloration			#	
